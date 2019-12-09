@@ -8,6 +8,9 @@ import SEO from "components/modules/Seo"
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
+    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
+      <Image />
+    </div>
     <h1>Mo's Home!</h1>
     <section>
       <h2>より良いUXを持ったサービスの開発を行う</h2>
@@ -22,9 +25,6 @@ const IndexPage = () => (
       <p>専攻している大学の勉強を通して、統計的かつ論理的な力を持った情報を発信していきます</p>
     </section>
     <p></p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
   </Layout>
 )
 
