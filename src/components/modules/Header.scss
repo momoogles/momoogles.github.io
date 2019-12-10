@@ -1,0 +1,18 @@
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background-color: rgba(216, 125, 125, 0.9);
+  .main-link {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    .title {
+      color: rgb(75, 34, 49);
+      font-size: 36px;
+      margin: 0;
+    }
+  }
+}

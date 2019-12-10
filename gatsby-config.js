@@ -26,7 +26,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/my-logo.png`, // This path is relative to the root of the site.
+        icon: `src/images/mo-logo.png`, // This path is relative to the root of the site.
       },
     },
     // Following plugins was added by Mo!
