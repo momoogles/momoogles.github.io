@@ -10,7 +10,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
-  transition: height .4s ease;
+  transition: all .4s ease;
   overflow: hidden;
   .main-link {
     align-items: center;
@@ -18,7 +18,7 @@
     flex-direction: row;
     .title {
       color: #4b2231;
-      font-size: 36px;
+      font-size: 32px;
       margin: 0;
     }
   }
@@ -91,6 +91,9 @@
       }
     }
   }
+  &.-white {
+    background-color: rgba(240, 238, 238, 0.9);
+  }
 }
 
 @media(min-width: 720px) {
@@ -104,11 +107,15 @@
       justify-content: center;
       align-items: center;
       font-weight: 600;
-      font-size: 24px;
+      font-size: 18px;
       > * {
         margin-right: 28px;
         color: #4b2231;
       }
     }
   }
+}
+
+.top-inner {
+  overflow: scroll;
 }

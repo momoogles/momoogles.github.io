@@ -14,7 +14,7 @@ import Header from "components/modules/Header"
 import Footer from "components/modules/Footer"
 import "./MainLayout.scss"
 
-const Layout = ({ rootId, children }) => {
+const Layout = ({ rootId, children, scrollTop }) => {
   const [navbarStatus, setNavbarStatus] = useState(false)
   const toggleNavbarStatus = () => {
     setNavbarStatus(!navbarStatus)
@@ -36,6 +36,7 @@ const Layout = ({ rootId, children }) => {
         siteTitle={data.site.siteMetadata.title}
         navbarStatus={navbarStatus}
         toggleNavbarStatus={toggleNavbarStatus}
+        scrollTop={scrollTop}
       />
       <main className="main-inner">{children}</main>
       <Footer siteAuthor={data.site.siteMetadata.author} />

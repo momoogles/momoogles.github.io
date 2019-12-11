@@ -1,4 +1,5 @@
 import React from "react"
+import throttle from 'lodash.throttle'
 // import { Link } from "gatsby"
 
 import Layout from "components/templates/MainLayout"
@@ -9,6 +10,9 @@ import AdCard from "components/modules/AdCard"
 import './index.scss'
 
 class IndexPage extends React.Component {
+  state = {
+    scrollTop: null
+  }
   cardList = [
     {
       paragraphList: ["より良いUI/UXを持った", "サービスの開発を行う"],
@@ -53,15 +57,20 @@ class IndexPage extends React.Component {
       </div>
     ))
   }
+  handleScroll = throttle(event => {
+    this.setState({ scrollTop: window.scrollY })
+  }, 100)
+  componentDidMount = () => {
+    window.addEventListener('scroll', this.handleScroll);
+  }
   render() {
     const logoStyle = {
       width: "70%",
     }
-
     return (
-      <Layout rootId="top">
+      <Layout rootId="top" scrollTop={this.state.scrollTop} >
         <SEO title="Home" />
-        <div className="top-inner">
+        <div className="top-inner" onScroll={this.handleScroll}>
           <section className="top-area">
             <div className="logo-wrap">
               <MainLogo logoStyle={logoStyle} />

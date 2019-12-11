@@ -5,7 +5,7 @@ import MainLogo from 'components/modules/MainLogo'
 import './Header.scss'
 import { Link } from "gatsby"
 
-const Header = ({ siteTitle, navbarStatus, toggleNavbarStatus }) => {
+const Header = ({ siteTitle, navbarStatus, toggleNavbarStatus, scrollTop }) => {
   const logoStyle = {
     width: "60px",
     height: "60px",
@@ -18,7 +18,7 @@ const Header = ({ siteTitle, navbarStatus, toggleNavbarStatus }) => {
   }
 
   return (
-    <header className={`main-header ${navbarStatus ? "-open" : ""}`}>
+    <header className={`main-header ${navbarStatus ? "-open" : ""} ${scrollTop > 640 ? "-white" : ""}`}>
       <Link to="/" className="main-link">
         <MainLogo logoStyle={logoStyle} />
         <h1 className="title">{siteTitle}</h1>
