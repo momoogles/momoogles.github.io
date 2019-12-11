@@ -4,15 +4,111 @@
   left: 0;
   right: 0;
   z-index: 1;
+  height: 68px;
   background-color: rgba(216, 125, 125, 0.9);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  transition: height .4s ease;
+  overflow: hidden;
   .main-link {
     align-items: center;
     display: flex;
     flex-direction: row;
     .title {
-      color: rgb(75, 34, 49);
+      color: #4b2231;
       font-size: 36px;
       margin: 0;
+    }
+  }
+  .nav-toggle {
+    margin: 0;
+    padding: 0;
+    width: 68px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer; 
+  }
+  .simple-nav {
+    position: absolute;
+    top: 68px;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 60px;
+    text-align: right;
+    font-size: 40px;
+    overflow: scroll;
+    a {
+      position: relative;
+      padding: 0 20px;
+      color: white;
+      font-weight: 600;
+      display: block;
+      line-height: 60px;
+      margin-bottom: 32px;
+      background-color: #543e3e;
+      opacity: 0;
+      border-radius: 8px 0 0 8px;
+      &::before {
+        position: absolute;
+        right: -30px;
+        content: "";
+        width: 30px;
+        height: 60px;
+        border-top: 30px solid transparent;
+        border-bottom: 30px solid transparent;
+        border-left: 15px solid #543e3e;
+      }
+      &:nth-child(even) {
+        border-radius: 0 8px 8px 0;
+        &::before {
+          right: unset;
+          left: -30px; 
+          border-left: none;
+          border-right: 15px solid #543e3e;
+        }
+      }
+      &:nth-child(1) {
+        transition: opacity .4s;
+      }
+      &:nth-child(2) { 
+        transition: opacity .4s;
+      }
+    }
+  }
+  .wide-nav {
+    display: none;
+  }
+  &.-open {
+    overflow: scroll;
+    height: 100vh;
+    .simple-nav {
+      a {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+@media(min-width: 720px) {
+  .main-header {
+    .simple-nav, .nav-toggle {
+      display: none;
+    }
+    .wide-nav {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 600;
+      font-size: 24px;
+      > * {
+        margin-right: 28px;
+        color: #4b2231;
+      }
     }
   }
 }

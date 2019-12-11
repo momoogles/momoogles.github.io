@@ -4,7 +4,7 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 body {
-  font-family: "Avenir Next", Verdana, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "游ゴシック", "Yu Gothic", "メイリオ", Meiryo, Osaka, sans-serif;
+  font-family: "Avenir Next", Verdana, 'M PLUS Rounded 1c', sans-serif, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "游ゴシック", "Yu Gothic", "メイリオ", Meiryo, Osaka, sans-serif;
   background-color: #fffdfd;
   margin: 0;
   max-width: 100vw;
@@ -14,6 +14,9 @@ body {
 
   main {
     padding-top: 100px;
+    &.-blur {
+      filter: blur(8px);
+    }
   }
   .-flex-column {
     display: flex;

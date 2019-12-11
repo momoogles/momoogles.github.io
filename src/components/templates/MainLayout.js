@@ -8,12 +8,17 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import { useState } from 'react';
 
 import Header from "components/modules/Header"
 import Footer from "components/modules/Footer"
 import "./MainLayout.scss"
 
-const Layout = ({ children, rootId }) => {
+const Layout = ({ rootId, children }) => {
+  const [navbarStatus, setNavbarStatus] = useState(false)
+  const toggleNavbarStatus = () => {
+    setNavbarStatus(!navbarStatus)
+  }
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -27,7 +32,11 @@ const Layout = ({ children, rootId }) => {
 
   return (
     <div id={rootId}>
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <Header
+        siteTitle={data.site.siteMetadata.title}
+        navbarStatus={navbarStatus}
+        toggleNavbarStatus={toggleNavbarStatus}
+      />
       <main className="main-inner">{children}</main>
       <Footer siteAuthor={data.site.siteMetadata.author} />
     </div>

@@ -8,12 +8,8 @@ import AdCard from "components/modules/AdCard"
 
 import './index.scss'
 
-const IndexPage = () => {
-  const logoStyle = {
-    width: "70%",
-  }
-
-  const cardList = [
+class IndexPage extends React.Component {
+  cardList = [
     {
       paragraphList: ["より良いUI/UXを持った", "サービスの開発を行う"],
       paragraphPosition: "right",
@@ -45,39 +41,47 @@ const IndexPage = () => {
         </svg>
     }
   ]
+  renderCardElements = () => {
+    return this.cardList.map((card, index) => (
+      <div className="card-wrap" key={`ad-card-${index}`}>
+        <AdCard
+          paragraphList={card.paragraphList}
+          paragraphPosition={card.paragraphPosition}
+          adText={card.adText}
+          link={card.link}
+        >{card.childrenElement}</AdCard>
+      </div>
+    ))
+  }
+  render() {
+    const logoStyle = {
+      width: "70%",
+    }
 
-  const cardElements = cardList.map((card, index) => (
-    <div className="card-wrap" key={`ad-card-${index}`}>
-      <AdCard
-        paragraphList={card.paragraphList}
-        paragraphPosition={card.paragraphPosition}
-        adText={card.adText}
-        link={card.link}
-      >{card.childrenElement}</AdCard>
-    </div>
-  ))
-
-  return (
-    <Layout rootId="top">
-      <SEO title="Home" />
-      <section className="top-area">
-        <div className="logo-wrap">
-          <MainLogo logoStyle={logoStyle} />
+    return (
+      <Layout rootId="top">
+        <SEO title="Home" />
+        <div className="top-inner">
+          <section className="top-area">
+            <div className="logo-wrap">
+              <MainLogo logoStyle={logoStyle} />
+            </div>
+            <svg className="wave" viewBox="0 0 100 25" width="50%">
+              <path d="M 0 25 Q 50 0 100 25" fill="#fffdfd" />
+            </svg>
+            <h2 className="sub-title"><span className="text-wrap">Mo's Home へ</span><span className="text-wrap">ようこそ！</span></h2>
+            <p className="text">Mo's Home はとある理系大学で勉学に勤しむ"Mo"の活躍を記したサイトです！</p>
+          </section>
+          <section className="main-area">
+            <svg className="wave" viewBox="0 0 100 25" width="50%" >
+              <path d="M 0 0 Q 50 25 100 0" fill="#d87d7d" />
+            </svg>
+            {this.renderCardElements()}
+          </section>
         </div>
-        <svg className="wave" viewBox="0 0 100 25" width="50%">
-          <path d="M 0 25 Q 50 0 100 25" fill="#fffdfd" />
-        </svg>
-        <h2 className="sub-title">ようこそ！Mo's Home へ！</h2>
-        <p className="text">Mo's Home はとある理系大学で勉学に勤しむ"Mo"の活躍を記したサイトです！</p>
-      </section>
-      <section className="main-area">
-        <svg className="wave" viewBox="0 0 100 25" width="50%" >
-          <path d="M 0 0 Q 50 25 100 0" fill="#d87d7d" />
-        </svg>
-        {cardElements}
-      </section>
-    </Layout >
-  )
+      </Layout >
+    )
+  }
 }
 
 export default IndexPage
