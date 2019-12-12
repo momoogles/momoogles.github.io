@@ -9,7 +9,7 @@ import './AdCard.scss'
 const AdCard = ({ paragraphList, adText, paragraphPosition, link, children }) => {
   const paragraphElements = paragraphList.map(paragraph => <div className="paragraph-wrap" key={`ad-title-${paragraph}`}><span className="belt">{paragraph}</span></div>)
   return (
-    <article className="ad-card">
+    <div className="ad-card">
       <div className="image-wrap -show">
         <div className="ad-image">{children}</div>
         <h3 className={`sub-sub-title -flex-column -${paragraphPosition}`}>
@@ -22,7 +22,7 @@ const AdCard = ({ paragraphList, adText, paragraphPosition, link, children }) =>
       </div>
       <p className="text">{adText}</p>
       <div className="link"><Link to={link}>詳しくみる→</Link></div>
-    </article>
+    </div>
   )
 }
 
