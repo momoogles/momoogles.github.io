@@ -6,6 +6,7 @@ import Layout from "components/templates/MainLayout"
 import MainLogo from "components/modules/MainLogo"
 import SEO from "components/modules/Seo"
 import AdCard from "components/modules/AdCard"
+import MySkillsImg from "components/modules/MySkillsImg"
 
 import './index.scss'
 
@@ -17,7 +18,7 @@ class IndexPage extends React.Component {
     {
       paragraphList: ["より良いUI/UXを持った", "サービスの開発を行う"],
       paragraphPosition: "right",
-      adText: "サークルやアルバイトを通じて、クライアントサイドエンジニアとしてサービスの開発に携わっていきます",
+      adText: "サークルやアルバイトを通じて、クライアントサイドエンジニアとしてWebサービスの開発に携わっていきます",
       link: "/apps",
       childrenElement:
         <svg width="60%" aria-hidden="true" focusable="false" data-prefix="far" data-icon="window-restore" className="svg-inline--fa fa-window-restore fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -65,7 +66,12 @@ class IndexPage extends React.Component {
   }
   render() {
     const logoStyle = {
-      width: "70%",
+      width: "70%"
+    }
+    const mySkillsImgStyle = {
+      width: "80%",
+      margin: "auto",
+      maxWidth: "600px"
     }
     return (
       <Layout rootId="top" scrollTop={this.state.scrollTop} >
@@ -75,16 +81,19 @@ class IndexPage extends React.Component {
             <div className="logo-wrap">
               <MainLogo logoStyle={logoStyle} />
             </div>
+            <h2 className="sub-title"><span className="text-wrap">Mo's Home へ</span><span className="text-wrap">ようこそ！</span></h2>
+            <p className="text">Mo's Home はとある理系大学で勉学に勤しむ"Mo"の活躍を記したサイトです！</p>
+
             <svg className="wave" viewBox="0 0 100 25" width="50%">
               <path d="M 0 25 Q 50 0 100 25" fill="#fffdfd" />
             </svg>
-            <h2 className="sub-title"><span className="text-wrap">Mo's Home へ</span><span className="text-wrap">ようこそ！</span></h2>
-            <p className="text">Mo's Home はとある理系大学で勉学に勤しむ"Mo"の活躍を記したサイトです！</p>
           </section>
           <section className="main-area">
             <svg className="wave" viewBox="0 0 100 25" width="50%" >
               <path d="M 0 0 Q 50 25 100 0" fill="#d87d7d" />
             </svg>
+            <h2>My Skills</h2>
+            <MySkillsImg mySkillsImgStyle={mySkillsImgStyle} />
             {this.renderCardElements()}
           </section>
         </div>
