@@ -47,7 +47,7 @@
     padding: 120px 12px;
     position: relative;
     width: 100vw;
-    background-color: #f2eeeecf;
+    background-color: #f2eeee;
     .hero {
       max-width: 600px;
       margin: auto;
@@ -56,7 +56,7 @@
         font-size: 24px;
         .text-wrap {
           color: rgb(249, 237, 237);
-          background-color: rgb(213, 185, 126);
+          background-color: rgb(205, 179, 124);
           border-radius: 4px;
           padding: 8px;
         }
@@ -64,6 +64,7 @@
       .description {
         padding: 0 16px;
         font-weight: 600;
+        line-height: 32px;
       }
     }
     .wave {
@@ -73,6 +74,13 @@
     }
     .card-wrap {
       margin-bottom: 60px;
+      opacity: 0;
+      transition: all .4s;
+      transform: translateY(32px);
+      &.-show {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   }
 }
