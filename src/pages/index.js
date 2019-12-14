@@ -88,13 +88,13 @@ class IndexPage extends React.Component {
     return (
       <Layout rootId="top" scrollTop={this.state.scrollTop} >
         <SEO title="Home" />
-        <div className="top-inner" onScroll={this.handleScroll}>
+        <main className="top-inner" onScroll={this.handleScroll}>
           <section className="top-area">
             <div className="logo-wrap">
               <MainLogo logoStyle={logoStyle} />
             </div>
             <h2 className="sub-title"><span className="text-wrap">Mo's Home へ</span><span className="text-wrap">ようこそ！</span></h2>
-            <p className="text">Mo's Home はとある理系大学で勉学に勤しむ"Mo"の活躍を記したサイトです！</p>
+            <p className="text">Mo's Home は東京理科大学という大学で勉学に勤しむ"Mo"の活躍を記したサイトです！</p>
             <svg className="wave" viewBox="0 0 100 25" width="50%">
               <path d="M 0 25 Q 50 0 100 25" fill="#f2eeee" />
             </svg>
@@ -113,7 +113,7 @@ class IndexPage extends React.Component {
             </div>
             {this.renderCardElements(cardList)}
           </section>
-        </div>
+        </main>
       </Layout >
     )
   }

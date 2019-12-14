@@ -2,6 +2,17 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
+  .no-image {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .no-img-icon {
+      width: 80px;
+      color: rgb(186, 186, 186);
+    }
+  }
   .img-info {
     display: flex;
     justify-content: space-between;
@@ -32,15 +43,16 @@
         font-size: 18px;
         font-weight: 700;
         &:hover {
-          color: rgb(144, 146, 187);
+          color: rgb(218, 219, 244);
         }
       }
       .github-link {
+        color: rgb(249, 244, 244);
         display: flex;
         align-items: center;
         text-shadow: 0 0 8px rgba(84, 84, 84, 0.7);
         &:hover {
-          color: rgb(209, 210, 238);
+          color: rgb(218, 219, 244);
         }
         svg {
           width: 32px;

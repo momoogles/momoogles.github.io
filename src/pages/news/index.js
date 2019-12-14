@@ -3,6 +3,8 @@ import React from "react"
 import Layout from "components/templates/MainLayout"
 import SEO from "components/modules/Seo"
 
+import './style.scss'
+
 const NewsPage = () => (
   <Layout rootId="news">
     <SEO title="News" />

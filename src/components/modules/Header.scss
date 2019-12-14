@@ -22,7 +22,7 @@
       margin: 0;
     }
   }
-  .nav-vtn {
+  .nav-btn {
     margin: 0;
     padding: 0;
     width: 68px;
@@ -98,7 +98,7 @@
 
 @media(min-width: 720px) {
   .main-header {
-    .toggle-nav, .nav-vtn {
+    .toggle-nav, .nav-btn {
       display: none;
     }
     .wide-nav {

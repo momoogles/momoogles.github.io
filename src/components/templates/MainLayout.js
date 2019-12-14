@@ -32,14 +32,14 @@ const Layout = ({ rootId, children, scrollTop }) => {
   `)
 
   return (
-    <div id={rootId}>
+    <div className="root" id={rootId}>
       <Header
         siteTitle={data.site.siteMetadata.title}
         navbarStatus={navbarStatus}
         toggleNavbarStatus={toggleNavbarStatus}
         scrollTop={scrollTop}
       />
-      <main className="main-inner">{children}</main>
+      <div className="contents-wrap">{children}</div>
       <Footer siteAuthor={data.site.siteMetadata.author} />
     </div>
   )

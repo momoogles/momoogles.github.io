@@ -4,6 +4,7 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 body {
+  width: 100vw;
   font-family: "Avenir Next", Verdana, 'M PLUS Rounded 1c', sans-serif, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "游ゴシック", "Yu Gothic", "メイリオ", Meiryo, Osaka, sans-serif;
   background-color: #fffdfd;
   margin: 0;
@@ -11,16 +12,20 @@ body {
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  main {
-    padding-top: 100px;
-    &.-blur {
-      filter: blur(8px);
+  .root {
+    position: relative;
+    min-height: 100vh;
+    padding: 100px 0;
+    .contents-wrap {
+      width: 100%;
+      &.-blur {
+        filter: blur(8px);
+      }
     }
-  }
-  .-flex-column {
-    display: flex;
-    flex-direction: column;
+    .-flex-column {
+      display: flex;
+      flex-direction: column;
+    }
   }
 }
 article,
