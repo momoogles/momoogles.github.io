@@ -1,12 +1,13 @@
 import React from "react"
-import throttle from 'lodash.throttle'
 // import { Link } from "gatsby"
 
+import throttle from 'lodash.throttle'
+
 import Layout from "components/templates/MainLayout"
-import MainLogo from "components/modules/MainLogo"
+import MainLogo from "components/MainLogo"
 import SEO from "components/modules/Seo"
 import AdCard from "components/modules/AdCard"
-import MySkillsImg from "components/modules/MySkillsImg"
+import MySkillsImg from "components/MySkillsImg"
 
 import './index.scss'
 

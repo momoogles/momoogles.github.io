@@ -12,6 +12,7 @@ import { useState } from 'react';
 
 import Header from "components/modules/Header"
 import Footer from "components/modules/Footer"
+
 import "./MainLayout.scss"
 
 const Layout = ({ rootId, children, scrollTop }) => {

@@ -1,8 +1,8 @@
 import React from "react"
-import PropTypes from "prop-types"
-import { Link } from 'gatsby'
 // import { useStaticQuery, graphql } from "gatsby"
+import { Link } from 'gatsby'
 // import Img from "gatsby-image"
+import PropTypes from "prop-types"
 
 import './AdCard.scss'
 
