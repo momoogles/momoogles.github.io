@@ -39,7 +39,7 @@ const AppsPage = () => {
       imgData: null,
       title: "Shinonome",
       date: "2019/12/05",
-      description: "Moの所属サークルであるPlaygroundを運営している株式会社Shinonomの公式サイト。Moはお問い合わせページやヘッダー&フッター、各所修正に貢献しました。",
+      description: "Moの所属サークルPlaygroundを運営している株式会社Shinonomの公式サイト。Moはお問い合わせページやヘッダー&フッター、各所修正に貢献しました。",
       link: "https://about.shinonome.io/",
       githubLink: null
     },
@@ -48,7 +48,7 @@ const AppsPage = () => {
       imgData: data.trousseImg.childImageSharp.fluid,
       title: "Trousse",
       date: "2019/11/23",
-      description: "今日使うコスメを迷っているあなたに代わって今日のコスメを決めてくれるアプリ。同級生と二人でMoの所属サークルであるOSKの先輩の指導を受けながら作成しました。Moはフロントエンド全般に貢献しました。",
+      description: "今日使うコスメを迷っているあなたに代わって今日のコスメを決めてくれるアプリ。Moの所属サークルOSKの先輩の指導を受けながら同級生と二人で作成しました。Moはフロントエンド全般に貢献しました。",
       link: "https://trousse.oskt.us/",
       githubLink: "https://github.com/TUS-OSK/trousse"
     },

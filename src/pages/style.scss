@@ -41,7 +41,7 @@
     }
     .text {
       color: #e9cbcb;
-      font-size: 18px;
+      font-size: 16px;
       font-weight: 700;
       text-align: center;
     }
@@ -65,7 +65,8 @@
         }
       }
       .description {
-        padding: 0 16px;
+        padding: 0 12px;
+        font-size: 14px;
         font-weight: 600;
         line-height: 32px;
       }
@@ -124,6 +125,11 @@
 @media(min-width: 600px) {
   #top {
     .main-area {
+      .hero {
+        .description {
+          font-size: 16px;
+        }
+      }
       .card-wrap {
         width: 600px;
       }

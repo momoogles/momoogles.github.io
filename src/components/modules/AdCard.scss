@@ -34,7 +34,7 @@
     align-items: center;
   }
   .text {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 600;
     padding: 12px 20px 4px;
   }
@@ -108,4 +108,13 @@
       }
     }
   }
+}
+
+@media(min-width: 480px) {
+  .ad-card {
+    .text {
+      font-size: 16px;
+    }
+  }
+
 }

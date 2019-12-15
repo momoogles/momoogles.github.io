@@ -9,7 +9,7 @@ import SEO from "components/modules/Seo"
 import AdCard from "components/modules/AdCard"
 import MySkillsImg from "components/MySkillsImg"
 
-import './index.scss'
+import './style.scss'
 
 class IndexPage extends React.Component {
   constructor(props) {
