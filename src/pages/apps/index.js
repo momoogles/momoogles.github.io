@@ -76,7 +76,7 @@ const AppsPage = () => {
 
   const renderApps = (infoList) => (
     infoList.map(info => (
-      <article class="app" key={`my-app-${info.id}`}>
+      <article className="app" key={`my-app-${info.id}`}>
         <div className="image-view-wrap">
           <ImgView imgData={info.imgData} title={info.title} link={info.link} githubLink={info.githubLink} />
         </div>
