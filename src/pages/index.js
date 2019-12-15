@@ -10,13 +10,16 @@ import AdCard from "components/modules/AdCard"
 import MySkillsImg from "components/MySkillsImg"
 
 import './style.scss'
+import TopAnime from "../components/modules/TopAnime"
 
 class IndexPage extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      scrollTop: null
+      scrollTop: null,
+      mountStatus: false
     }
+
     this.handleScroll = throttle(event => {
       this.setState({ scrollTop: window.scrollY })
     }, 100)
@@ -36,6 +39,9 @@ class IndexPage extends React.Component {
   }
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll);
+    setTimeout(() => {
+      this.setState({ mountStatus: true })
+    }, 1000)
   }
   render() {
     const cardList = [
@@ -86,35 +92,38 @@ class IndexPage extends React.Component {
     }
 
     return (
-      <Layout rootId="top" scrollTop={this.state.scrollTop} >
-        <SEO title="Home" />
-        <main className="top-inner" onScroll={this.handleScroll}>
-          <section className="top-area">
-            <div className="logo-wrap">
-              <MainLogo logoStyle={logoStyle} />
-            </div>
-            <h2 className="sub-title"><span className="text-wrap">Mo's Home へ</span><span className="text-wrap">ようこそ！</span></h2>
-            <p className="text">Mo's Home は東京理科大学という大学で勉学に勤しむ"Mo"の活躍を記したサイトです！</p>
-            <svg className="wave" viewBox="0 0 100 25" width="50%">
-              <path d="M 0 25 Q 50 0 100 25" fill="#f2eeee" />
-            </svg>
-          </section>
-          <section className="main-area">
-            <svg className="wave" viewBox="0 0 100 25" width="50%" >
-              <path d="M 0 0 Q 50 25 100 0" fill="#d87d7d" />
-            </svg>
-            <div className="hero">
-              <h2 className="sub-title"><span className="text-wrap">My Skills</span></h2>
-              <MySkillsImg mySkillsImgStyle={mySkillsImgStyle} />
-              <p className="description">
-                Moは<span className="-red">「Web development【Web開発スキル】」</span><span className="-green">「Designing【イラスト(ロゴ)デザインスキル】」</span><span className="-blue">「Logical thinking【論理的な考え方】」</span>という3つの大きなスキルを持っています。
-                この3つの力を自分の柱として明確に認識し、さらに成長させていくことで、多くの人に感動を与えるサービスやデザインを制作することを志しています。
+      <div className="root-wrap">
+        <TopAnime mounted={this.state.mountStatus} />
+        <Layout rootId="top" scrollTop={this.state.scrollTop} >
+          <SEO title="Home" />
+          <main className="top-inner" onScroll={this.handleScroll}>
+            <section className="top-area">
+              <div className="logo-wrap">
+                <MainLogo logoStyle={logoStyle} />
+              </div>
+              <h2 className="sub-title"><span className="text-wrap">Mo's Home へ</span><span className="text-wrap">ようこそ！</span></h2>
+              <p className="text">Mo's Home は東京理科大学という大学で勉学に勤しむ"Mo"の活躍を記したサイトです！</p>
+              <svg className="wave" viewBox="0 0 100 25" width="50%">
+                <path d="M 0 25 Q 50 0 100 25" fill="#f2eeee" />
+              </svg>
+            </section>
+            <section className="main-area">
+              <svg className="wave" viewBox="0 0 100 25" width="50%" >
+                <path d="M 0 0 Q 50 25 100 0" fill="#d87d7d" />
+              </svg>
+              <div className="hero">
+                <h2 className="sub-title"><span className="text-wrap">My Skills</span></h2>
+                <MySkillsImg mySkillsImgStyle={mySkillsImgStyle} />
+                <p className="description">
+                  Moは<span className="-red">「Web development【Web開発スキル】」</span><span className="-green">「Designing【イラスト(ロゴ)デザインスキル】」</span><span className="-blue">「Logical thinking【論理的な考え方】」</span>という3つの大きなスキルを持っています。
+                  この3つの力を自分の柱として明確に認識し、さらに成長させていくことで、多くの人に感動を与えるサービスやデザインを制作することを志しています。
               </p>
-            </div>
-            {this.renderCardElements(cardList)}
-          </section>
-        </main>
-      </Layout >
+              </div>
+              {this.renderCardElements(cardList)}
+            </section>
+          </main>
+        </Layout >
+      </div>
     )
   }
 }

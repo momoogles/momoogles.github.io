@@ -1,0 +1,142 @@
+#top-anime {
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #fff7f7;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all .2s ease .4s;
+  .title {
+    text-align: center;
+    font-size: 60px;
+    opacity: 1;
+    transition: opacity .2s ease .2s;
+  }
+  .main-logo {
+    opacity: 1;
+    position: relative;
+    width: 400px;
+    height: 400px;
+    transition: opacity .4s ease .2s;
+    .icon-m {
+      width: 220px;
+      height: 210px;
+      position: absolute;
+      top: 32px;
+      left: 32px;
+      opacity: 0;
+      transform: translateY(-30px);
+      transition: all .4s ease .4s;
+    }
+    .icon-o {
+      width: 214px;
+      height: 220px;
+      position: absolute;
+      bottom: 32px;
+      right: 32px;
+      opacity: 0;
+      transform: translateX(-30px) rotate(-30deg);
+      transition: all .4s ease .2s;
+      .icon-bar {
+        width: 100px;
+        height: 30px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: -1;
+      }
+    }
+    .icon-dots {
+      width: 48px;
+      height: 30px;
+      position: absolute;
+      bottom: 32px;
+      right: -20px;
+      rect:nth-child(1) {
+        opacity: 0;
+        transition: opacity .2s ease .5s;
+      }
+      rect:nth-child(2) {
+        opacity: 0;
+        transition: opacity .2s ease .6s;
+      }
+      rect:nth-child(3) {
+        opacity: 0;
+        transition: opacity .2s ease .7s;
+      }
+    }
+  }
+  &.-started {
+    .main-logo {
+      opacity: 1;
+      .icon-m {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      .icon-o {
+        transform: translateX(0) rotate(0);
+        opacity: 1;
+      }
+      .icon-dots {
+        rect:nth-child(1) {
+          opacity: 1;
+        }
+        rect:nth-child(2) {
+          opacity: 1;
+        }
+        rect:nth-child(3) {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  &.-hidden {
+    top: 100vh;
+    z-index: 0;
+    .title {
+      opacity: 0;
+    }
+    .main-logo {
+      opacity: 0;
+    }
+  }
+}
+
+@media(max-width: 480px) {
+  #top-anime {
+    .title {
+      font-size: 28px;
+    }
+    .main-logo {
+      width: 200px;
+      height: 200px;
+      .icon-m {
+        width: 110px;
+        height: 105px;
+        top: 12px;
+        left: 12px;
+      }
+      .icon-o{
+        width: 107px;
+        height: 110px;
+        bottom: 12px;
+        right: 12px;
+        .icon-bar {
+          width: 50px;
+          height: 16px;
+        }
+      }
+      .icon-dots {
+        bottom: 14px;
+        right: -18px;
+        width: 24px;
+        height: 15px;
+      }
+    }
+  }
+}

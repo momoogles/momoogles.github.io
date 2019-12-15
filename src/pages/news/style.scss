@@ -1,3 +1,12 @@
 #news {
+  padding: 100px 12px;
   text-align: center;
+  .text {
+    display: inline-block;
+    background-color: rgb(237, 237, 237);
+    font-size: 28px;
+    border-radius: 4px;
+    font-weight: 600;
+    padding: 8px 20px;
+  }
 }

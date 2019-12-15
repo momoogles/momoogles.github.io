@@ -92,16 +92,16 @@ const AppsPage = () => {
     <Layout rootId="apps">
       <SEO title="Apps" />
       <main className="apps-inner">
-        <section className="my-apps">
-          <h2>My Apps</h2>
-          <div className="apps-wrap">
-            {renderApps(myAppInfos)}
-          </div>
-        </section>
         <section className="my-contributions">
           <h2>My Contributions</h2>
           <div className="apps-wrap">
             {renderApps(myContributionInfos)}
+          </div>
+        </section>
+        <section className="my-apps">
+          <h2>My Apps</h2>
+          <div className="apps-wrap">
+            {renderApps(myAppInfos)}
           </div>
         </section>
       </main>
