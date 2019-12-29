@@ -24,6 +24,17 @@ const SEO = ({ description, lang, meta, title }) => {
       }
     `
   )
+  const ogpImg = useStaticQuery(graphql`
+  query {
+    placeholderImage: file(relativePath: { eq: "mo-logo.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 300) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`)
 
   const metaDescription = description || site.siteMetadata.description
 
@@ -50,6 +61,11 @@ const SEO = ({ description, lang, meta, title }) => {
         {
           property: `og:type`,
           content: `website`,
+        },
+
+        {
+          property: "og:image",
+          content: ogpImg.placeholderImage.childImageSharp.fluid
         },
         {
           name: `twitter:card`,
