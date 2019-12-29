@@ -5,6 +5,7 @@ module.exports = {
     title: `Mo's Home`,
     description: `This is the home page for Mo`,
     author: `@momoogles`,
+    imageUrl: `https://momoogles.github.io/mo-ogp-image.png`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
