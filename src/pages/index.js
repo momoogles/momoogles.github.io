@@ -73,7 +73,7 @@ class IndexPage extends React.Component {
         cardTitle: "Logical thinking",
         paragraphList: ["統計的で論理的な", "情報を発信する"],
         paragraphPosition: "right",
-        adText: "大学で専攻している統計学の勉強を通して、統計的かつ論理的な力を持った情報を発信していきます",
+        adText: "大学での統計学の勉強を通して、統計的かつ論理的な力を持った情報を発信していきます",
         link: "/news",
         popPositionTop: 2200,
         childrenElement:
