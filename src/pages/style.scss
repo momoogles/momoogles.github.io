@@ -1,6 +1,6 @@
 #top {
   &.root {
-  padding: 0;
+    padding: 0;
   }
   .-red {
     color: #a55858;
@@ -23,7 +23,7 @@
     background-color: #d87d7d;
     height: calc(100vh - 32px);
     position: relative;
-    width: 100vw;
+    width: 100%;
     .wave {
       position: absolute;
       left: 0;
@@ -49,7 +49,7 @@
   .main-area {
     padding: 120px 12px;
     position: relative;
-    width: 100vw;
+    width: 100%;
     background-color: #f2eeee;
     .hero {
       max-width: 600px;
@@ -79,8 +79,9 @@
     .card-wrap {
       margin-bottom: 60px;
       opacity: 0;
-      transition: all .4s;
+      transition: all 0.4s;
       transform: translateY(32px);
+      box-sizing: border-box;
       &.-show {
         opacity: 1;
         transform: translateY(0);
@@ -89,8 +90,7 @@
   }
 }
 
-
-@media(min-width: 480px) {
+@media (min-width: 480px) {
   #top {
     .logo-wrap {
       width: calc(480px - 48px);
@@ -114,15 +114,15 @@
         }
       }
       .card-wrap {
-        width: 480px;
-        padding: 60px;
+        width: 100%;
+        padding: 60px 16px;
         margin: auto;
       }
     }
   }
 }
 
-@media(min-width: 600px) {
+@media (min-width: 600px) {
   #top {
     .main-area {
       .hero {
@@ -137,10 +137,10 @@
   }
 }
 
-@media(max-height: 600px) {
+@media (max-height: 600px) {
   #top {
     .top-area {
-      height: calc(600px - 32px)
+      height: calc(600px - 32px);
     }
   }
 }
